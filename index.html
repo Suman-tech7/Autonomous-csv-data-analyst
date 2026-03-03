@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Autonomous CSV Analyst</title>
+</head>
+<body>
+    <h2>Autonomous CSV Data Analyst</h2>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+        <input type="text" name="question" placeholder="Ask a question" required><br><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if answer %}
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+        {% if image %}
+            <img src="{{ image }}" width="500">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
